@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/theme/DefaultTheme.theme" type="Theme" id=1]
+
+[node name="AddDice" type="Button"]
+theme = ExtResource( 1 )
+toggle_mode = true
+text = "Add dice"
+flat = true
+align = 0

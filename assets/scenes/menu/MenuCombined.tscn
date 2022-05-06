@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/textures/menus.png" type="Texture" id=1]
+[ext_resource path="res://assets/scenes/menu/MenuFlatTextButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/textures/GitHub-Mark-Light-64px.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/Share-Light-64px.png" type="Texture" id=4]
+[ext_resource path="res://assets/scenes/menu/MenuCombined.material" type="Material" id=5]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 579, 2840, 98, 98 )
+filter_clip = true
+
+[node name="Menu" type="Control"]
+material = ExtResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -155.0
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 5 )
+margin_right = 250.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 250, 900 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 221.0
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 105, 100 )
+icon = SubResource( 2 )
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 108.0
+margin_right = 250.0
+margin_bottom = 221.0
+
+[node name="AddDice" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 2 )]
+margin_right = 250.0
+margin_bottom = 35.0
+
+[node name="RemoveDice" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 39.0
+margin_right = 250.0
+margin_bottom = 74.0
+text = "Remove dice"
+
+[node name="Music" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 78.0
+margin_right = 250.0
+margin_bottom = 113.0
+text = "Music"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -70.0
+margin_right = 156.0
+
+[node name="LinkGitHub" type="Button" parent="HBoxContainer"]
+margin_right = 76.0
+margin_bottom = 70.0
+icon = ExtResource( 3 )
+flat = true
+
+[node name="LinkShare" type="Button" parent="HBoxContainer"]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 70.0
+icon = ExtResource( 4 )
+flat = true
